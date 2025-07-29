@@ -1,0 +1,37 @@
+// Light theme variables (default Bootstrap colors)
+[data-theme="light"] {
+  --bs-body-color: #212529;
+  --bs-body-bg: #ffffff;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-danger: #dc3545;
+  --bs-warning: #ffc107;
+  --bs-info: #0dcaf0;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-border-color: #dee2e6;
+  --bs-link-color: #0d6efd;
+  --bs-link-hover-color: #0a58ca;
+}
+
+[data-theme="light"] {
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom-color: #dee2e6;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-color: #dee2e6;
+  }
+  
+  .game-card:hover {
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.15);
+  }
+  
+  .mobile-nav {
+    background-color: #ffffff;
+    border-top-color: #dee2e6;
+  }
+}

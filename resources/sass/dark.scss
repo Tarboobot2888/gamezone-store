@@ -1,0 +1,133 @@
+// Dark theme variables
+[data-theme="dark"] {
+  --bs-body-color: #e9ecef;
+  --bs-body-bg: #0d1117;
+  --bs-primary: #58a6ff;
+  --bs-secondary: #8b949e;
+  --bs-success: #3fb950;
+  --bs-danger: #f85149;
+  --bs-warning: #d29922;
+  --bs-info: #58a6ff;
+  --bs-light: #f0f6fc;
+  --bs-dark: #21262d;
+  --bs-border-color: #30363d;
+  --bs-link-color: #58a6ff;
+  --bs-link-hover-color: #79c0ff;
+}
+
+[data-theme="dark"] {
+  .navbar {
+    background-color: rgba(13, 17, 23, 0.95) !important;
+    border-bottom-color: #30363d;
+  }
+  
+  .card {
+    background-color: #161b22;
+    border-color: #30363d;
+  }
+  
+  .btn-outline-primary {
+    color: #58a6ff;
+    border-color: #58a6ff;
+    
+    &:hover {
+      background-color: #58a6ff;
+      border-color: #58a6ff;
+      color: #0d1117;
+    }
+  }
+  
+  .form-control,
+  .form-select {
+    background-color: #21262d;
+    border-color: #30363d;
+    color: #e9ecef;
+    
+    &:focus {
+      background-color: #21262d;
+      border-color: #58a6ff;
+      color: #e9ecef;
+    }
+    
+    &::placeholder {
+      color: #8b949e;
+    }
+  }
+  
+  .dropdown-menu {
+    background-color: #21262d;
+    border-color: #30363d;
+  }
+  
+  .dropdown-item {
+    color: #e9ecef;
+    
+    &:hover,
+    &:focus {
+      background-color: #30363d;
+      color: #e9ecef;
+    }
+  }
+  
+  .modal-content {
+    background-color: #161b22;
+    border-color: #30363d;
+  }
+  
+  .modal-header {
+    border-bottom-color: #30363d;
+  }
+  
+  .modal-footer {
+    border-top-color: #30363d;
+  }
+  
+  .table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+    color: #e9ecef;
+  }
+  
+  .table-dark {
+    --bs-table-bg: #21262d;
+    --bs-table-striped-bg: #30363d;
+    --bs-table-hover-bg: #30363d;
+  }
+  
+  .mobile-nav {
+    background-color: #161b22;
+    border-top-color: #30363d;
+  }
+  
+  .game-card {
+    background-color: #161b22;
+    border-color: #30363d;
+    
+    &:hover {
+      box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
+    }
+  }
+  
+  .status-badge {
+    &.status-pending {
+      background-color: rgba(209, 154, 34, 0.2);
+      color: #d29922;
+    }
+    
+    &.status-processing {
+      background-color: rgba(88, 166, 255, 0.2);
+      color: #58a6ff;
+    }
+    
+    &.status-completed {
+      background-color: rgba(63, 185, 80, 0.2);
+      color: #3fb950;
+    }
+    
+    &.status-cancelled {
+      background-color: rgba(248, 81, 73, 0.2);
+      color: #f85149;
+    }
+  }
+}

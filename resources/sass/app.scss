@@ -1,0 +1,420 @@
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Import FontAwesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// Custom Variables
+:root {
+    --gaming-primary: #667eea;
+    --gaming-secondary: #764ba2;
+    --gaming-gradient: linear-gradient(135deg, var(--gaming-primary) 0%, var(--gaming-secondary) 100%);
+    --gaming-font: 'Orbitron', system-ui, sans-serif;
+    --body-font: 'Inter', system-ui, sans-serif;
+}
+
+// Base Styles
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+}
+
+.gaming-font {
+    font-family: var(--gaming-font);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.gaming-gradient {
+    background: var(--gaming-gradient);
+}
+
+.text-gaming-gradient {
+    background: var(--gaming-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// Button Styles
+.btn-gaming {
+    background: var(--gaming-gradient);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: linear-gradient(135deg, var(--gaming-secondary) 0%, var(--gaming-primary) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        color: white;
+    }
+    
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        color: white;
+    }
+    
+    &:active {
+        transform: translateY(0);
+        color: white;
+    }
+}
+
+// Card Styles
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.product-card {
+    @extend .card-hover;
+    border-radius: 15px;
+    overflow: hidden;
+    
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover .card-img-top {
+        transform: scale(1.05);
+    }
+}
+
+.game-card {
+    @extend .product-card;
+}
+
+.service-card {
+    @extend .product-card;
+}
+
+.account-card {
+    @extend .product-card;
+}
+
+// Navigation Styles
+.navbar {
+    backdrop-filter: blur(10px);
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-weight: 500;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: var(--gaming-primary) !important;
+        }
+        
+        &.active {
+            color: var(--gaming-primary) !important;
+            font-weight: 600;
+        }
+    }
+}
+
+// Mobile Navigation
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.5rem 0;
+    
+    .nav-link {
+        color: #6c757d;
+        text-decoration: none;
+        font-size: 0.75rem;
+        transition: color 0.3s ease;
+        
+        &:hover, &.active {
+            color: var(--gaming-primary);
+        }
+    }
+    
+    .nav-icon {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+// Footer Styles
+footer {
+    .social-links a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: var(--gaming-primary);
+            transform: translateY(-2px);
+        }
+    }
+    
+    .payment-icon {
+        height: 24px;
+        margin-left: 8px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// Hero Section
+.hero-section {
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/images/gaming-pattern.png') repeat;
+        opacity: 0.1;
+        z-index: 1;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hero-image {
+        max-height: 400px;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        animation: float 3s ease-in-out infinite;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+// Feature Cards
+.feature-card {
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover .feature-icon {
+        transform: scale(1.1);
+    }
+}
+
+// Form Styles
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    
+    &:focus {
+        border-color: var(--gaming-primary);
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+}
+
+.form-select {
+    @extend .form-control;
+}
+
+// Toast Styles
+.toast {
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+// Loading Overlay
+#loading-overlay {
+    backdrop-filter: blur(5px);
+}
+
+// Notification Styles
+.notification-dropdown {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    
+    .notification-item {
+        border-radius: 8px;
+        margin: 0.25rem;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+        
+        &.unread {
+            background-color: rgba(102, 126, 234, 0.05);
+            border-left: 3px solid var(--gaming-primary);
+        }
+    }
+}
+
+// Badge Styles
+.badge {
+    font-size: 0.7rem;
+    
+    &.cart-count {
+        animation: pulse 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+// Search Styles
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+    
+    .search-result-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background-color: #f8f9fa;
+        }
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    
+    .search-result-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 1rem;
+    }
+}
+
+// Responsive Utilities
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        text-align: center;
+        
+        .display-4 {
+            font-size: 2rem;
+        }
+    }
+    
+    .feature-card {
+        margin-bottom: 2rem;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+    
+    body {
+        padding-bottom: 80px; // Account for mobile nav
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+// Print Styles
+@media print {
+    .navbar,
+    .mobile-nav,
+    footer,
+    .btn,
+    .toast-container {
+        display: none !important;
+    }
+    
+    body {
+        padding-bottom: 0;
+    }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+    .btn-gaming {
+        border: 2px solid currentColor;
+    }
+    
+    .card {
+        border: 2px solid currentColor;
+    }
+}
