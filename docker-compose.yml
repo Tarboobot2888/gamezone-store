@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+      - redis
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: gamezone
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - "3306:3306"
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
