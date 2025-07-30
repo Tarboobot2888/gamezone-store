@@ -1,0 +1,28 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_DATABASE: gamezone
+          MYSQL_ROOT_PASSWORD: secret
+        ports: ['3306:3306']
+      redis:
+        image: redis:alpine
+        ports: ['6379:6379']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: composer install --ignore-platform-reqs
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm run test:unit
+      - run: php artisan test
