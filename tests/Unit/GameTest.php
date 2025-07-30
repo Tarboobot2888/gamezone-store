@@ -1,4 +1,5 @@
 <?php
+ yg374e-codex/refactor-and-productionize-gamezonestore
 
 namespace Tests\Unit;
 
@@ -13,3 +14,11 @@ class GameTest extends TestCase
         $this->assertEquals('Test', $game->name);
     }
 }
+
+use App\Models\Game;
+
+test('game has name attribute', function () {
+    $game = new Game(['name' => 'Test']);
+    expect($game->name)->toBe('Test');
+});
+ main

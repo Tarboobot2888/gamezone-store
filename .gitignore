@@ -30,4 +30,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 vendor/
+ yg374e-codex/refactor-and-productionize-gamezonestore
 bootstrap/cache/
+
+ main

@@ -1,4 +1,5 @@
 <?php
+ yg374e-codex/refactor-and-productionize-gamezonestore
 
 namespace Tests\Feature;
 
@@ -12,3 +13,13 @@ class RegistrationTest extends TestCase
         $response->assertStatus(200);
     }
 }
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\User;
+
+it('shows registration page', function () {
+    $response = $this->get('/register');
+    $response->assertStatus(200);
+});
+
+main
