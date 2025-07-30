@@ -18,7 +18,15 @@ Modern Laravel 10 single page application powered by Inertia.js and Vue 3.
    ```bash
    npm install
    ```
+ yg374e-codex/refactor-and-productionize-gamezonestore
+4. Run database migrations and seeders:
+   ```bash
+   php artisan migrate --seed
+   ```
+5. Run the development server:
+
 4. Run the development server:
+ main
    ```bash
    php artisan serve
    npm run dev
